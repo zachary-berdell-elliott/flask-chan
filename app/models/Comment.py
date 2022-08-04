@@ -8,3 +8,4 @@ class Comment(db.Document):
     image_url = db.URLField(required=False)
     reply_comment = db.ReferenceField(Comment, dbref=False, required=False)
     text = db.StringField(max_length=1024)
+    created_at = db.DateTimeField(default=datetime.now())
