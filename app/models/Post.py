@@ -9,4 +9,4 @@ class Post(db.Document):
     text = db.StringField(max_length=2048)
     upvotes = db.ListField(field=db.ReferenceField(Upvote, dbref=False, reverse_delete_rule=CASCADE))
     comments = db.ListField(field=db.ReferenceField(Comment, dbref=False, reverse_delete_rule=CASCADE))
-    
+    created_at = db.DateTimeField(default=datetime.now())
